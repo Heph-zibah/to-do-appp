@@ -21,7 +21,7 @@ body {
     background-position: top center;
     background-size:100% 40vh;
     height: 100vh;
-    padding: 20px 0;
+    padding: 70px 0;
 }
 
 .todo__body {
@@ -61,6 +61,9 @@ body {
     background-color: transparent;
     border: 0;
     outline: 0;
+    caret-color: hsl(220, 98%, 61%);
+    color: var(--cardDarkFont);
+    font-size: 18px;
 }
 .todo__form input::placeholder {
     font-size: 18px;
@@ -132,6 +135,10 @@ body {
     border-color: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     color: #fff;
   }
+
+  .todo__text {
+    font-size: 16px;
+  }
   
 .todo__actions {
     display: flex;
@@ -175,7 +182,7 @@ body {
         background-position: top center;
         background-size:100% 40vh;
         height: 100vh;
-        padding: 55px 0 0;
+        padding: 120px 0 0;
     }
 
     .todo__body {
@@ -183,6 +190,10 @@ body {
         max-width: 500px;   
         padding: 0;
     }
+
+    .todo__text {
+        font-size: 18px;
+      }
 
     .todo__act {
         display: flex;
