@@ -1,1 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bodyDarkBg: hsl(235, 21%, 11%);
+    --cardDarkBg:hsl(233, 14%, 35%);
+    --cardDarkFont: hsl(234, 39%, 85%);
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    background: url("../src/assets/images/bg-mobile-dark.jpg");
+    background-color: var(--bodyDarkBg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size:100% 40vh;
+    height: 100vh;
+    padding: 20px 0;
+}
+
+.todo__body {
+    width: 100%;
+    margin:0 auto;
+    padding: 20px;
+}
+
+.todo__head {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.todo__head h3 {
+    text-transform: uppercase; 
+    letter-spacing:10px;
+}
+
+.todo__head--icon {
+    cursor: pointer;
+}
+
+.todo__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cardDarkBg);
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.todo__form input {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+.todo__form input::placeholder {
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--cardDarkFont);
+}
+
+.todo__form button {
+    background: transparent;
+    border: 0;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.todo__lists {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.todo__list {
+    padding: 15px 15px 0;
+    list-style-type: none;
+    color: var(--cardDarkFont);
+    background-color:  var(--cardDarkBg);
+    border-bottom: 1px solid  var(--cardDarkFont);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo__list--icon {
+    display: none;
+}
+
+.todo__list:hover .todo__list--icon {
+    display: block;
+}
+
+.todo__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+ input[type="checkbox"] {
+    display: none;
+  }
+
+ input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+ input[type="checkbox"]:checked + label::before {
+    background-image:url("../src/assets/images/icon-check.svg"), linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    border-color: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    color: #fff;
+  }
+  
+.todo__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cardDarkFont);
+    padding: 15px ;
+    background-color:  var(--cardDarkBg);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 14px;
+}
+
+.todo__act {
+    display: none; 
+}
+
+.todo__clear {
+    cursor: pointer;
+}
+
+.todo__act--mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cardDarkFont);
+    background-color:  var(--cardDarkBg);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width:1200px) {
+    body {
+        background: url("../src/assets/images/bg-desktop-dark.jpg");
+        background-color: var(--bodyDarkBg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size:100% 40vh;
+        height: 100vh;
+        padding: 55px 0 0;
+    }
+
+    .todo__body {
+        width: 100%;
+        max-width: 500px;   
+        padding: 0;
+    }
+
+    .todo__act {
+        display: flex;
+        align-items: center;
+        gap: 10px; 
+        cursor: pointer;
+    }
+
+    .todo__act--mobile {
+        display: none;
+    }
+}
