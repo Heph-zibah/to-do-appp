@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {FcPlus} from 'react-icons/fc'
 import {IoIosSunny} from 'react-icons/io'
-import {FaTimes} from 'react-icons/fa'
 import Todo from "./components/Todo";
 
 function App() {
+
+const [todos, setTodos] = useState(['Complete online Javascript course', 'Jog round the campus', 'Read 1hour'])
+
   return (
    <>
     <div className="todo__body">
@@ -17,7 +19,10 @@ function App() {
       <button><FcPlus/></button>
      </form>
      <ul className="todo__lists">
-      <Todo/>
+      {todos.map((todo, index)=> {
+       return <Todo key={index} todo={todo}/>
+      })}
+      
      </ul>
      <div className="todo__actions">
       <p className="todo__count">5 items left</p>
