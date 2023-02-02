@@ -2,6 +2,7 @@ import React from "react";
 import {FcPlus} from 'react-icons/fc'
 import {IoIosSunny} from 'react-icons/io'
 import {FaTimes} from 'react-icons/fa'
+import Todo from "./components/Todo";
 
 function App() {
   return (
@@ -16,13 +17,7 @@ function App() {
       <button><FcPlus/></button>
      </form>
      <ul className="todo__lists">
-      <li className="todo__list">
-        <div className="todo__item">
-          <input className="todo__checkbox" type="checkbox" id="checkbox"/>
-          <label className="todo__text" for="checkbox">Complete online Javascript course</label>
-        </div>
-        <FaTimes className="todo__list--icon"/>
-      </li>
+      <Todo/>
      </ul>
      <div className="todo__actions">
       <p className="todo__count">5 items left</p>
