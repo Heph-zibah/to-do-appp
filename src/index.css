@@ -95,7 +95,12 @@ body {
 }
 
 .todo__list--complete {
-    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+    padding: 15px 15px 0;
+    border-bottom: 1px solid  var(--cardDarkFont);
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .todo__list--icon {
@@ -103,6 +108,9 @@ body {
 }
 
 .todo__list:hover .todo__list--icon {
+    display: block;
+}
+.todo__list--complete:hover .todo__list--icon {
     display: block;
 }
 
@@ -142,6 +150,7 @@ body {
 
   .todo__text {
     font-size: 16px;
+    text-transform: capitalize;
   }
   .todo__text--complete{
     text-decoration: line-through;
