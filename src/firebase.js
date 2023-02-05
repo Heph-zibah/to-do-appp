@@ -8,10 +8,10 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: `${process.env.REACT_APP_API_KEY}`,
   authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
-  projectId: "frontend-todo-4cb33",
-  storageBucket: "frontend-todo-4cb33.appspot.com",
-  messagingSenderId: "79169180717",
-  appId: "1:79169180717:web:cc8e0007271e85dbb214a4"
+  projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
+  appId: `${process.env.REACT_APP_APP_ID}`,
 };
 
 // Initialize Firebase
