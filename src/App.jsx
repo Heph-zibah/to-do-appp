@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from "react";
-import {FcPlus} from 'react-icons/fc'
-import {IoIosSunny} from 'react-icons/io'
+import { Link } from "react-router-dom";
 import Todo from "./components/Todo";
 import {db} from './firebase';
-import {query,collection, onSnapshot, querySnapshot, updateDoc, doc, addDoc, deleteDoc} from 'firebase/firestore'
+import {query,collection, onSnapshot, querySnapshot, updateDoc, doc, deleteDoc} from 'firebase/firestore'
 import CreateTodo from "./components/CreateTodo";
 import FilterSection from "./components/FilterSection";
+import FilterButton from "./components/FilterButton";
 
+// Defining filter: giving each filter a unique name and behaviour using object.keys()
 const FILTER_MAP = {
   All: () => true,
-  Active: (toddo) => !toddo.completed,
-  Completed: (toddo) => toddo.completed
+  Active: (todo) => !todo.completed,
+  Completed: (todo) => todo.completed
 };
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
-
-
+// APP.JS
 function App() {
 
 const [todos, setTodos] = useState([]);
-const [input, setInput] = useState('');
-const [filter, setFilter] = useState('All');
+const [filterStatus, setFilterStatus] = useState(todos);
 
-// const todosNoun = todos.length !== 1 ? 'items' : 'item';
+// Set Theme
+const [theme, setTheme] = useState('dark')
+useEffect(() => {
+  document.body.className = theme
+}, [theme])
 
 // read todo
 useEffect(() => {
@@ -49,29 +52,33 @@ const toggleComplete = async (todo) => {
 const deleteTodo = async (id) => {
   await deleteDoc(doc(db, 'todos', id));
 };
-const [theme, setTheme] = useState('dark')
 
-const [filterStatus, setFilterStatus] = useState("");
-
-
-useEffect(() => {
-  document.body.className = theme
-}, [theme])
+// Filter Todo
+const [filter, setFilter] = useState('All');
+const filterList = FILTER_NAMES.map((name) => (
+  <FilterButton key={name} name={name}
+  isPressed={name === filter}
+  setFilter={setFilter}/>
+));
 
   return (
    <>
     <div className={`wrapper ${theme}`}>
-    <div className="todo__body">
-      <CreateTodo theme={theme} setTheme={setTheme}/>
-     <ul className="todo__lists">
-      {todos.map((todo, index)=> {
-       return <Todo key={index} todo={todo} toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>
-      })}
-     </ul>
-     
-     <FilterSection todos={todos} setTodos={setTodos} setFilterStatus={setFilterStatus}/>
-    </div>
-    
+      <div className="todo__body">
+        {/* Create Todo */}
+        <CreateTodo theme={theme} setTheme={setTheme}/>
+        {/* Todo List */}
+        <main>
+          <ul className="todo__lists">
+          {todos.filter(FILTER_MAP[filter]).map((todo, index)=> {
+          return <Todo key={index} todo={todo} toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>
+          })}
+          </ul>
+          {/* Filter Todo */}
+          <FilterSection todos={todos} setTodos={setTodos}  filterList={filterList} setFilterStatus={setFilterStatus}/>
+        </main>
+      </div>
+      <footer><p>Challenge by <Link to="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub">Frontend Mentor</Link>. Coded by <Link to="https://www.frontendmentor.io/profile/Heph-zibah">Oluwatosin Abigail Daramola</Link>.</p></footer>
     </div>
     </>
   );
