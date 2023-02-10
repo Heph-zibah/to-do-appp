@@ -7,6 +7,10 @@
 }
 
 :root {
+    /* Primary */
+    
+    --caret-color:hsl(220, 98%, 61%);
+
     /* Light Theme */
     --color-very-light-gray: hsl(0, 0%, 98%);
     --color-very-light-grayish-blue: hsl(236, 33%, 92%);
@@ -91,9 +95,10 @@ body {
     background-color: transparent;
     border: 0;
     outline: 0;
-    caret-color: hsl(220, 98%, 61%);
+    caret-color: var(--caret-color);
     color: var(--cardDarkFont);
     font-size: 18px;
+    font-weight: bold;
 }
 .todo__form input::placeholder {
     font-size: 18px;
@@ -239,6 +244,14 @@ body {
     background-color:  var(--color-very-dark-desaturated-blue);
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+footer a {
+    color: green;
+}
 @media screen and (min-width:1200px) {
     .wrapper {
         height: 100vh;
