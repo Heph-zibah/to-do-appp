@@ -41,7 +41,6 @@ button, a {
 }
 
 .wrapper {
-    /* height: 100vh; */
     padding: 70px 0;
     width: 100%;
     background-repeat: no-repeat;
@@ -126,7 +125,6 @@ button, a {
 .todo__lists {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    box-shadow: -1px 5px 10px 10px rgba(157, 162, 235, 0.3);
 }
 
 .todo__list {

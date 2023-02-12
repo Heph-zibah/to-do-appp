@@ -30,11 +30,10 @@ Users should be able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-- **Bonus**: Drag and drop to reorder items on the list
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Project Immage](./src/assets/images/screenshot.png)
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
@@ -55,11 +54,19 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* dark theme */
+.wrapper.dark {
+    background-image: url("../src/assets/images/bg-mobile-dark.jpg");
+    background-color: var(--color-very-dark-blue);
+    color: var(--color-dark-dark-grayish-blue);
+}
+
+/* Light theme */
+.wrapper.light {
+    background-image: url("../src/assets/images/bg-mobile-light.jpg");
+    background-color: var(--color-very-light-gray);
+    color: var(--color-dark-grayish-blue);
 }
 ```
 ```js
@@ -85,7 +92,10 @@ return (
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Firebase
+- React
+- Saving API keys
+- Writing test for code
 
 ### Useful resources
 
@@ -98,6 +108,4 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Website - [Oluwatosin A Daramola](https://medium.com/@oluwatosinhephzibah)
 - Frontend Mentor - [@Heph-zibah](https://www.frontendmentor.io/profile/Heph-zibah)
 - Twitter - [@undaunted_pen](https://twitter.com/undaunted_pen)
-
-## Acknowledgments
 
