@@ -20,7 +20,7 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 function App() {
 
 const [todos, setTodos] = useState([]);
-const [filterStatus, setFilterStatus] = useState(todos);
+const [filterStatus, setFilterStatus] = useState([]);
 
 // Set Theme
 const [theme, setTheme] = useState('dark')
@@ -55,10 +55,15 @@ const deleteTodo = async (id) => {
 
 // Filter Todo
 const [filter, setFilter] = useState('All');
+const [active, setActive] = useState(null);
 const filterList = FILTER_NAMES.map((name) => (
-  <FilterButton key={name} name={name}
+  <FilterButton 
+  key={name} 
+  name={name}
   isPressed={name === filter}
-  setFilter={setFilter}/>
+  setFilter={setFilter}
+  className={active === name ? 'active' : ''}
+  onClick={() => setActive(name)}/>
 ));
 
   return (
