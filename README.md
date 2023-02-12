@@ -14,7 +14,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -36,7 +35,7 @@ Users should be able to:
 ![Project Immage](./src/assets/images/screenshot.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub)
 - Live Site URL: [Add live site URL here](https://todo-app-six-tau-35.vercel.app/)
 
 ## My process
