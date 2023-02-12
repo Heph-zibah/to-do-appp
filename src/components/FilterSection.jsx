@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FilterSection = ({todos, setTodos,setFilterStatus,  filterList}) => {
+const FilterSection = ({todos, setTodos,setFilterStatus, filterList}) => {
   const clearCompletedTodos = () => {
     setTodos(todos.filter((todo) => !todo.completed));
     setFilterStatus('');
