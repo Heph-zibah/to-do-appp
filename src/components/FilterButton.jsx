@@ -1,14 +1,17 @@
 import React from 'react'
 
-const FilterButton = (props) => {
+const FilterButton = ({ name, isPressed, setFilter, className, onClick }) => {
   return (
     <div>
-    <button  type="button"
-      className="btn toggle-btn"
-      aria-pressed={props.isPressed}
-      onClick={() => props.setFilter(props.name)}>
-      <span>{props.name}</span>
-      
+    <button  
+     type="button"
+     className={`todo__filter--btn ${className}`}
+     aria-pressed={isPressed}
+     onClick={() => {
+       setFilter(name);
+       onClick(name);
+     }}>
+      <span>{name}</span>
     </button>
   </div>
   )
