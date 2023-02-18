@@ -18,14 +18,14 @@ const CreateTodo = ({theme, setTheme}) => {
 
   // create todo
   const [input, setInput] = useState('');
-  const createTodo = async (e) => {
+  const createTodo = (e) => {
     e.preventDefault()
 
     if(input === '') {
       alert('please enter a valid todo')
       return
     }
-    await addDoc(collection(db, 'todos'), {
+    addDoc(collection(db, 'todos'), {
       text:input,
       completed: false
     })
