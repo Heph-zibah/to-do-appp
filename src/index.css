@@ -33,6 +33,7 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
+    height: 100vh;
 }
 
 button, a {
@@ -107,6 +108,7 @@ button, a {
     color: var(--cardDarkFont);
     font-size: 18px;
     font-weight: bold;
+    width: 100%;
 }
 .todo__form input::placeholder {
     font-size: 18px;
@@ -119,6 +121,7 @@ button, a {
     border: 0;
     font-size: 22px;
     cursor: pointer;
+    padding: 5px 10px;
 }
 
 /* TODO component */
@@ -273,7 +276,8 @@ input[type="checkbox"]:checked + label::before {
 /* Footer */
 footer {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
+    
 }
 footer a {
     color: green;
