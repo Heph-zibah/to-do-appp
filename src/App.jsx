@@ -22,6 +22,11 @@ function App() {
 const [todos, setTodos] = useState([]);
 const [filterStatus, setFilterStatus] = useState([]);
 
+useEffect(() => {
+  localStorage.setItem('dataKey', JSON.stringify(todos));
+}, [todos]);
+
+
 // Set Theme
 const [theme, setTheme] = useState('dark')
 useEffect(() => {
