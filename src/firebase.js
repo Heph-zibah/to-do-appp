@@ -13,10 +13,7 @@ const firebaseConfig = {
   messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
   appId: `${process.env.REACT_APP_APP_ID}`,
 };
-const firestoreDB = initializeFirestore(firebaseApp, {
-  experimentalForceLongPolling: true, // this line
-  useFetchStreams: false, // and this line
-})
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
